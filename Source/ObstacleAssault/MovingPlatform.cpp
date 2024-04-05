@@ -16,8 +16,12 @@ void AMovingPlatform::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime);
 
-    FVector LocalVector = MyVector;
-    LocalVector.Z += 100;
-    MyVector.Y++;
-    SetActorLocation(LocalVector);
+    // Move platform forwards
+    // Get current location
+    FVector CurrentLocation = GetActorLocation();
+    // Add vector to that location
+    CurrentLocation.X += 2;
+    CurrentLocation.Y += 2;
+    // Set the location
+    SetActorLocation(CurrentLocation);
 }
