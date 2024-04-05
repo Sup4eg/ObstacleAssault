@@ -11,10 +11,8 @@ void AMovingPlatform::BeginPlay()
 {
     Super::BeginPlay();
 
-    MyInt = 9;
-
-    APlusB = InputA + InputB;
-    APlusBFloat = InputFloatA + InputFloatB;
+    MyVector.Y = MyX;
+    
 }
 
 void AMovingPlatform::Tick(float DeltaTime)
