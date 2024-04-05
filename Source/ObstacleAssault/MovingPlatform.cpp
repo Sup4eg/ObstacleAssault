@@ -10,9 +10,7 @@ AMovingPlatform::AMovingPlatform()
 void AMovingPlatform::BeginPlay()
 {
     Super::BeginPlay();
-
-    MyVector.Y = MyX;
-    
+    SetActorLocation(MyVector);
 }
 
 void AMovingPlatform::Tick(float DeltaTime)
