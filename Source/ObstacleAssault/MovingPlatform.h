@@ -20,6 +20,7 @@ protected:
 public:
     virtual void Tick(float DeltaTime) override;
 
+private:
     UPROPERTY(EditAnywhere, Category = "Moving Platform")
     FVector PlatformVelocity = FVector(100, 0, 0);
 
@@ -27,4 +28,7 @@ public:
     float MovedDistance = 100.f;
 
     FVector StartLocation;
+
+    void MovePlatform(float DeltaTime);
+    void RotatePlatform(float DeltaTime);
 };

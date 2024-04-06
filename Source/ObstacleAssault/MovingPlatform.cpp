@@ -21,17 +21,16 @@ void AMovingPlatform::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime);
 
-    // Move platform forwards
-    // Get current location
+    MovePlatform(DeltaTime);
+    RotatePlatform(DeltaTime);
+}
+
+void AMovingPlatform::MovePlatform(float DeltaTime)
+{
     FVector CurrentLocation = GetActorLocation();
-    // Add vector to that location
     CurrentLocation += PlatformVelocity * DeltaTime;
-    // Set the location
     SetActorLocation(CurrentLocation);
-    // Send platform back if gone too far
-    // Check how far we've moved
     float DistanceMoved = FVector::Dist(StartLocation, CurrentLocation);
-    // Reverse direction if we've gone too far
     if (DistanceMoved > MovedDistance)
     {
         float OverShoot = DistanceMoved - MovedDistance;
@@ -42,4 +41,9 @@ void AMovingPlatform::Tick(float DeltaTime)
         SetActorLocation(StartLocation);
         PlatformVelocity *= -1;
     }
+}
+
+void AMovingPlatform::RotatePlatform(float DeltaTime)
+{
+    UE_LOG(LogTemp, Display, TEXT("Rotate Platform: %s"), *GetName());
 }
