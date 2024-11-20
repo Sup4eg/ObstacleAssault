@@ -1,4 +1,5 @@
 # ObstacleAssault Game
+Obstacle Assault is a platform game featuring physics - based simulations of actors and character movement controlled through Blueprints.
 
 ## Game building
 
